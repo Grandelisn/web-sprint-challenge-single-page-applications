@@ -9,6 +9,7 @@ import Confirmation from "./components/Confirmation";
 import * as yup from 'yup'
 
 const initFormVal = {
+  name: '',
   size: '',
   sauce: '',
   pepperoni: false,
@@ -73,9 +74,10 @@ const App = () => {
   }
   const formSubmit = () => {
     const newOrder = {
+      name: formVal.name.trim(),
       size: formVal.size.trim(),
       sauce: formVal.sauce.trim(),
-      toppings: ['pepperoni', 'sausage', 'canadian bacon', 'spicy italian sausage', 'grilled chicken', 'onions', 'green pepper', 'diced tomatoes', 'black olives', 'roasted garlic', 'artichoke hearts', 'three cheese', 'pineapples', 'extra cheese'].filter(topping => formVal[topping]),
+      toppings: ['pepperoni', 'sausage', 'canadianBacon', 'spicyItalianSausage', 'grilledChicken', 'onions', 'greenPepper', 'dicedTomatoes', 'blackOlives', 'roastedGarlic', 'artichokeHearts', 'threeCheese', 'pineapple', 'extraCheese'].filter(topping => formVal[topping]),
     }
     postOrder(newOrder);
   }

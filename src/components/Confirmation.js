@@ -11,7 +11,7 @@ const Confirmation = (props) => {
         </div>
         <div className = 'confirm-container'>
             {details.map(pizza => {
-                return(<Pizza data = {pizza}/>)
+                return(<Pizza data = {pizza} key = {pizza.id}/>)
             })}
         </div>
         <h2>Enjoy this pizza pup</h2>

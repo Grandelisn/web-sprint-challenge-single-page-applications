@@ -1,6 +1,7 @@
 import * as yup from "yup";
 
 export default yup.object().shape({
+  name: yup .string(),
   size: yup
     .string()
     .oneOf(['small', 'medium', 'large','xlarge'], 'Pizza size is required'),

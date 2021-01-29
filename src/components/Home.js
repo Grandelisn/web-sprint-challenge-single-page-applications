@@ -11,7 +11,7 @@ const Home = () => {
         </div>
         <div className = 'item-cards'>
             {data.map(rest =>{
-                return <ItemCards rest = {rest}/>
+                return <ItemCards rest = {rest} key ={data.id}/>
         })}
         </div>
     </div>

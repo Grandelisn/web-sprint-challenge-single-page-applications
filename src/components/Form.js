@@ -20,6 +20,8 @@ const Form = (props) => {
           <img src = {pizzaman}/>
           <form className ='order-form' onSubmit = {onSubmit}>
               <h2>Build your own pizza!</h2>
+              <h2>Enter name:</h2>
+              <input type = 'text' name = 'name' placeholder = "Name" value = {values.name} onChange = {onChange}/>
               <h2>Choice of Size</h2>
               <h3>Required</h3>
               <select name = 'size' value = {values.size} onChange ={onChange}>
@@ -172,9 +174,9 @@ const Form = (props) => {
               </div>
               <div className = 'crust-div'>
                 <h3>Gluten free crust</h3>
-                <label class = 'switch'>
+                <label className = 'switch'>
                   <input type = 'checkbox' name = 'sub' checked = {values.sub} onChange = {onChange}/>
-                  <span class = 'slider'></span>
+                  <span className = 'slider'></span>
                 </label>
               </div>
               <h2>Special Instructions</h2>
@@ -183,12 +185,14 @@ const Form = (props) => {
                   <input type = 'number'
                          name = 'itemCount'
                          id = 'quantity'
-                         placeholder = '1'
+                         placeholder = '0'
                          min = '1'
                          max = '5'
                          value = {values.itemCount}
                          onChange = {onChange}/>
-                  <button className = 'confirmation-btn' disabled = {disabled}>Add to Order ${Math.round((values.itemCount * 17.99)*100)/100}</button>
+                  <button className = 'confirmation-btn' id = 'submitBtn' disabled = {disabled}>
+                    Add to Order ${Math.round((values.itemCount * 17.99)*100)/100}
+                    </button>
               </div>
           </form>
           
